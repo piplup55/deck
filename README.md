@@ -3,7 +3,7 @@ Reverting to mesa 22 on deck
 
 ## Automatic install
 
-```curl https://github.com/piplup55/misc/blob/yuzu-mesa-22/autoinstall.sh | sh```
+`curl https://raw.githubusercontent.com/piplup55/misc/yuzu-mesa-22/autoinstall.sh | sh`
 
 ## Manual install
 
