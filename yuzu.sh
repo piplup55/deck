@@ -1,7 +1,7 @@
 #!/bin/sh
 emuName="yuzu" #parameterize me
 emufolder="$HOME/Applications" # has to be applications for ES-DE to find it
-mesaversion="22.2.1"
+mesaversion="22.2.1" # putting `system` in mesaversion disbles custom icd's
 
 if [ -e "/home/deck/emudeck/mesa/22.2.1/radeon_icd.x86_64.json" ]; then
     export VK_ICD_FILENAMES="/home/deck/emudeck/mesa/${mesaversion}/radeon_icd.x86_64.json"
