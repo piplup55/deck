@@ -1,4 +1,5 @@
 #!/bin/sh
+set -x
 . "$HOME/emudeck/settings.sh"
 
 mkdir -p "$HOME/emudeck/mesa/22.2.1/"
