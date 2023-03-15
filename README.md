@@ -1,6 +1,12 @@
 # Yuzu Mesa 22
 Reverting to mesa 22 on deck
 
+## Automatic install
+
+```curl https://github.com/piplup55/misc/blob/yuzu-mesa-22/autoinstall.sh | sh```
+
+## Manual install
+
 start by downloading [vulkan-radeon 22.2.1](https://steamdeck-packages.steamos.cloud/archlinux-mirror/extra-main/os/x86_64/vulkan-radeon-22.2.1-1-x86_64.pkg.tar.zst)
 
 1. grab the .so file in `/usr/lib` along with the [radeon_icd.x86_64.json](https://github.com/piplup55/misc/blob/yuzu-mesa-22/mesa/22.1.1/radeon_icd.x86_64.json) and copy them to `/home/deck/emudeck/mesa/22.2.1` from this repo
