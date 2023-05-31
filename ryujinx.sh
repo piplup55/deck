@@ -1,13 +1,16 @@
 #!/bin/sh
-emuName="yuzu" #parameterize me
-emufolder="$HOME/Applications" # has to be applications for ES-DE to find it
+source $HOME/.config/EmuDeck/backend/functions/all.sh
+rclone_downloadEmu ryujinx
+emuName="Ryujinx" #parameterize me
+emufolder="$HOME/Applications/publish" # has to be applications for ES-DE to find it
 mesaversion="22.2.1" # putting `system` in mesaversion disbles custom icd's
 
 if [ -e "/home/deck/emudeck/mesa/${mesaversion}/radeon_icd.x86_64.json" ]; then
     export VK_ICD_FILENAMES="/home/deck/emudeck/mesa/${mesaversion}/radeon_icd.x86_64.json"
 fi
+
 #find full path to emu executable
-exe=$(find $emufolder -iname "${emuName}*.AppImage" | sort -n | cut -d' ' -f 2- | tail -n 1 2>/dev/null)
+exe=$(find $emufolder -iname "${emuName}" | sort -n | cut -d' ' -f 2- | tail -n 1 2>/dev/null)
 
 #if appimage doesn't exist fall back to flatpak.
 if [[ $exe == '' ]]; then
@@ -25,5 +28,5 @@ substituteWith='"'
 param=${param/\'/"$substituteWith"}
 #Fix last ' on command
 param=$(echo "$param" | sed 's/.$/"/')
-#if livedeht has a problem with the way i do this they are welcome to open a pr i will happliy merge it
 eval "${exe} ${param}"
+rclone_uploadEmu ryujinx
