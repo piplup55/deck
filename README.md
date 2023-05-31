@@ -6,7 +6,7 @@ some games started to crash due to mesa 23.1 with a **Unexpected API error "Erro
 
 ## Automatic install
 
-`curl https://raw.githubusercontent.com/piplup55/misc/yuzu/mesa/autoinstall.sh | sh`
+`curl https://raw.githubusercontent.com/piplup55/misc/ryujinx/mesa/autoinstall.sh | sh`
 
 ## Manual install
 
